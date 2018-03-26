@@ -1,0 +1,11 @@
+= simple_form_for @vehicles, url: admin_vehicles_path, defaults: { label: false } do |f|
+  = f.simple_fields_for :vehicle do |v|
+    .form_group
+      = v.input :make_id, collection: Make.all, label_method: :label
+    = v.input :model_id, collection: Model.all, label_method: :label
+    = v.input :year
+    = v.input :price
+    = v.input :comment
+    = v.file_field :image
+  %div
+    = f.submit

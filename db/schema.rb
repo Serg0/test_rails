@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20180325165427) do
     t.decimal "price", precision: 10, scale: 2
     t.integer "make_id"
     t.integer "model_id"
+    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.json "images"
