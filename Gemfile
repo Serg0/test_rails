@@ -13,6 +13,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'kaminari'
 gem 'carrierwave', '~> 1.0'
+gem 'dotenv-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
@@ -44,7 +45,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :twst do
+group :test do
   gem 'factory_bot_rails'
 end
 
