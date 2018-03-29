@@ -9,4 +9,6 @@
 ## Dependencies
 * Ruby version  - 2.4.1
 * Rails version - 5.1.4
-* Postgres - this app should simplify setup -> https://postgresapp.com/
+
+## URL
+https://machinery-pete.herokuapp.com
