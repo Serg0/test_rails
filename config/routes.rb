@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
+  scope '/admin' do
+    devise_for :admins, path: '/'
+  end
   devise_for :users
 
-  root 'vehicles#index'
+  root 'pages#dashboard'
+
+  resources :vehicles, only: :index
 
   namespace :admin do
     resources :vehicles
-  end
-
-  scope '/admin' do
-    devise_for :admins, path: '/'
   end
 end
