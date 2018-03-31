@@ -1,2 +1,4 @@
 en:
   brand: "Machinery"
+  vehicles:
+    new: 'New Vehicle'

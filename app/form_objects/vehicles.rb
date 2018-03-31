@@ -4,12 +4,10 @@ class Vehicles
   attr_reader :attributes, :make, :model, :year, :price, :comment
 
   def initialize(attributes)
-    @attributes = attributes[:vehicle]
+    @attributes = attributes
   end
 
   def save
-    Vehicle.create(attributes)
+    ::VehicleService::CreateAll.new(attributes).call
   end
-
-  private
 end

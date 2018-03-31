@@ -12,9 +12,13 @@ class Admin::VehiclesController < ApplicationController
 
   def create
     @vehicles = Vehicles.new(vehicles_params)
-    if @vehicles.save
+    vehicles_collection = @vehicles.save
+
+    if vehicles_collection.status
       redirect_to admin_vehicles_path
     else
+      flash[:errors] = vehicles_collection.errors
+
       render :new
     end
   end
@@ -22,6 +26,6 @@ class Admin::VehiclesController < ApplicationController
   private
 
   def vehicles_params
-    params.fetch(:vehicles, {}).permit!
+    params.fetch(:vehicles).permit!
   end
 end
