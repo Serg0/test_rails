@@ -8,6 +8,6 @@ class Vehicles
   end
 
   def save
-    ::VehicleService::CreateAll.new(attributes).call
+    ::VehicleService::Base.create_all(attributes)
   end
 end

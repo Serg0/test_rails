@@ -1,30 +1,10 @@
-= simple_form_for @vehicles, url: admin_vehicles_path, defaults: { label: false } do |f|
-  = f.simple_fields_for :vehicle do |v|
-    .row
-      .col-md-3.text-right
-        = v.label :make_id
-      .col-md-9
-        = v.input :make_id, collection: Make.all
-      .col-md-3.text-right
-        = v.label :model_id
-      .col-md-9
-        = v.input :model_id, collection: Model.all
-      .col-md-3.text-right
-        = v.label :year
-      .col-md-9
-        = v.input :year
-      .col-md-3.text-right
-        = v.label :price
-      .col-md-9
-        = v.input :price
-      .col-md-3.text-right
-        = v.label :comment
-      .col-md-9
-        = v.input :comment
-      .col-md-3.text-right
-        = v.label :image
-      .col-md-9
-        = v.file_field :image
-    %row
-      .col-md-12.text-right
-        = f.submit
+= simple_form_for @vehicles, url: admin_vehicles_path, defaults: { label: false } do |form|
+  - if params[:vehicles].blank?
+    = render 'admin/vehicles/form_fields', index: '0', form: form if params[:vehicles].blank?
+  - else
+    - params[:vehicles].each_with_index do
+      = render 'admin/vehicles/form_fields', index: index.to_s, form: form
+
+  %row
+    .col-md-12.text-right
+      = form.submit

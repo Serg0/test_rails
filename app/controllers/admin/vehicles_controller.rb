@@ -26,6 +26,6 @@ class Admin::VehiclesController < ApplicationController
   private
 
   def vehicles_params
-    params.fetch(:vehicles).permit!
+    params.fetch(:vehicles, {}).permit!
   end
 end

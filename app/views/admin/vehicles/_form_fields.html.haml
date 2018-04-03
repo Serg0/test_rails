@@ -1,0 +1,31 @@
+= form.simple_fields_for index do |v|
+  .row
+    .col-md-3.text-right
+      = v.label :make_id
+    .col-md-4.col-md-offset-2
+      = v.input :make_id, collection: Make.all, label_method: :label, input_html: { class: 'select2' }
+  .row
+    .col-md-3.text-right
+      = v.label :model_id
+    .col-md-4.col-md-offset-2
+      = v.input :model_id, collection: Model.all, label_method: :label, input_html: { class: 'select2' }
+  .row
+    .col-md-3.text-right
+      = v.label :year
+    .col-md-4.col-md-offset-2
+      = v.input :year, name: 'year'
+  .row
+    .col-md-3.text-right
+      = v.label :price
+    .col-md-4.col-md-offset-2
+      = v.input :price
+  .row
+    .col-md-3.text-right
+      = v.label :comment
+    .col-md-4.col-md-offset-2
+      = v.input :comment
+  .row
+    .col-md-3.text-right
+      = v.label :image
+    .col-md-4.col-md-offset-2
+      = v.file_field :image
