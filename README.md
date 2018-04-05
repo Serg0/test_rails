@@ -12,3 +12,10 @@
 
 ## URL
 https://machinery-pete.herokuapp.com
+
+* Admin:
+ - admin@example.com
+ - changeme
+* User:
+ - email@example.com
+ - changeme
