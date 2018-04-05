@@ -12,9 +12,13 @@ class Admin::VehiclesController < ApplicationController
 
   def create
     @vehicles = Vehicles.new(vehicles_params)
-    if @vehicles.save
+    vehicles_collection = @vehicles.save
+
+    if vehicles_collection.status
       redirect_to admin_vehicles_path
     else
+      flash[:errors] = vehicles_collection.errors
+
       render :new
     end
   end

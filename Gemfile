@@ -20,13 +20,13 @@ gem 'jbuilder', '~> 2.5'
 # ====== UI =======
 
 gem 'sass-rails', '~> 5.0'
-gem 'turbolinks', '~> 5'
 gem 'haml-rails', "~> 1.0"
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'bootstrap', '~> 4.0.0'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-rails'
+gem 'select2-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -45,6 +45,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'annotate'
 end
 
 group :test do
